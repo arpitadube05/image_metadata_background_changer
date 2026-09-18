@@ -1,0 +1,32 @@
+# Tested with Python 3.12. Versions below are lower-bounded on what was
+# verified working together; newer minor/major releases have also been
+# confirmed compatible at the time of writing.
+
+# Core UI framework
+streamlit>=1.32
+
+# Image handling and basic processing
+Pillow>=10.0
+
+# Computer vision (headless build - no GUI dependencies needed on a server/laptop)
+opencv-python-headless>=4.9
+
+# Numerical operations (histograms, color math, gradients)
+numpy>=1.26
+
+# Chart tool used for optional visualizations
+matplotlib>=3.8
+
+# EXIF reading/writing helpers (used for reference; Pillow's built-in EXIF
+# support is used as the primary path so the app works even without these)
+piexif>=1.1.3
+ExifRead>=3.0
+
+# --- Optional: AI-based background removal ---
+# The app works fully without these two packages (it falls back to an
+# OpenCV GrabCut-based classical method). Install them for higher-quality
+# AI cutouts. First use downloads a small model file (~4-40MB depending on
+# model) from the rembg GitHub release, so an internet connection is
+# needed the first time only.
+rembg>=2.0.50
+onnxruntime>=1.17
